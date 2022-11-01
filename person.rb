@@ -15,10 +15,8 @@ class Person
 
   private
 
-  def is_of_age?
+  def of_age?
     @age >= 18
   end
 end
 
-person1 = Person.new(2, 'Promise')
-puts person1.can_use_services?
