@@ -17,9 +17,9 @@ class Person < Nameable
     @name
   end
 
-def add_rentals(rental)
+  def add_rentals(rental)
     @rentals.push(rental)
-    rental.person = self
+    rentals.person = self
   end
 
   def can_use_services?
