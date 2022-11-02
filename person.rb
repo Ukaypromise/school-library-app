@@ -10,10 +10,16 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def correct_name
     @name
+  end
+
+def add_rentals(rental)
+    @rentals.push(rental)
+    rental.person = self
   end
 
   def can_use_services?
