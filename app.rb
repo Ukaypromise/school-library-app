@@ -153,5 +153,26 @@ class App
     end
   end
 
+   def create_a_rental
+    puts 'Select a book by an index'
+    display_all_books
+    run if @books.empty?
+    book_index = gets.chomp.to_i - 1
+
+    puts 'select a person below'
+    display_all_people
+    action_prompt if @people.empty?
+    person_index = gets.chomp.to_i - 1
+
+    puts 'Date [yyyy/mm/dd] : '
+    date = gets.chomp
+
+    new_rental = Rental.new(date, @people[person_index], @books[book_index])
+    @rentals << new_rental unless @rentals.include?(new_rental)
+
+    puts 'Rentals created successfully !'
+    run
+  end
+
 end
 
