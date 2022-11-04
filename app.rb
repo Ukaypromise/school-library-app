@@ -27,10 +27,10 @@ class App
       puts "people list (#{@people.count})"
 
       @people.each_with_index do |person, index|
-        puts "#{index + 1} type: #{ person.type }  person name: #{person.name}, person id: #{person.id}"
+        puts "#{index + 1} type: #{person.type}  person name: #{person.name}, person id: #{person.id}"
       end
     end
-    #action_prompt
+    # action_prompt
   end
 
   # Create a Person
