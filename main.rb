@@ -3,11 +3,9 @@ require_relative './app'
 def options
   puts "---------------------------------\n
   Welcome to School Library App!\n
-  \n
+ 'Please choose an option by entrying a number!:'
   ------------------------------"
-  puts "---------------------------------\n
-   puts 'Please choose an option by entrying a number:'!\n
-   ------------------------------"
+
 
   select_option = [
     '1 - List all books',

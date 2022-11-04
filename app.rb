@@ -30,6 +30,7 @@ class App
         puts "#{index + 1} type: #{person.type} person name: #{person.name}, person id: #{person.id}"
       end
     end
+    action_prompt
   end
 
   # Create a Person
@@ -121,6 +122,7 @@ class App
         puts "#{index + 1} book in archive. Title is: #{book.title} written by: #{book.author}"
       end
     end
+    action_prompt
   end
 
   def create_a_book
