@@ -48,6 +48,28 @@ class App
       create_a_person
     end
   end
+#Create a Student
+   def create_a_student
+    puts 'Age'
+    age = gets.chomp.to_i
+
+    puts 'classroom: (A or B)'
+    classroom = gets.chomp
+
+    puts 'Name'
+    name = gets.chomp
+
+    has_permission = permit?
+
+    new_student = Student.new(classroom, age, name: name, parent_permission: has_permission)
+    @people << new_student unless @books.include?(new_student)
+
+    puts new_student
+
+    puts "Student #{name} with age #{age} and classroom #{classroom.upcase}, was created"
+
+    action_prompt
+  end
 
 end
 
