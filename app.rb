@@ -120,7 +120,18 @@ class App
       end
     end
   end
+    def create_a_book
+    puts 'Book Author'
+    author = gets.chomp
 
+    puts 'Book Title'
+    title = gets.chomp
+
+    new_book = Book.new(title, author)
+    @books.push(new_book)
+    puts "Book #{title} written by #{author} was created"
+    action_prompt
+  end
 
 end
 
