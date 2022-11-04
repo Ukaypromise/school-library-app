@@ -70,7 +70,7 @@ class App
 
     action_prompt
   end
-
+#Create a Teacher
     def create_a_teacher
     puts 'Age'
     age = gets.chomp.to_i
@@ -92,6 +92,23 @@ class App
 
     action_prompt
   end
+
+   def permit?
+    puts 'Have a parent permit ? [Y / N]'
+
+    permit = gets.chomp.upcase
+
+    case permit
+    when 'Y'
+      true
+    when 'N'
+      false
+    else
+      puts 'Invalid choice'
+      permit?
+    end
+  end
+
 
 end
 
