@@ -71,5 +71,27 @@ class App
     action_prompt
   end
 
+    def create_a_teacher
+    puts 'Age'
+    age = gets.chomp.to_i
+
+    puts 'Specialization'
+    specialization = gets.chomp
+
+    puts 'Name'
+    name = gets.chomp
+
+    has_permission = permit?
+
+    new_teacher = Teacher.new(specialization, age, name: name, parent_permission: has_permission)
+    @people << new_teacher unless @books.include?(new_teacher)
+
+    puts new_teacher
+
+    puts "Teacher #{name} with age #{age} and specialization #{specialization.upcase}, was created"
+
+    action_prompt
+  end
+
 end
 
