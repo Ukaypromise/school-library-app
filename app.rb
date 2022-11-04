@@ -5,7 +5,7 @@ require_relative './book'
 require_relative './rentals'
 
 class App
-    attr_accessor :book, :people, :rentals
+  attr_accessor :book, :people, :rentals
 
   def initialize
     @books = []
@@ -16,7 +16,8 @@ class App
   def run
     action_prompt
   end
-#Display All People
+
+  # Display All People
   def display_all_people
     if @people.empty?
       puts 'List empty'
@@ -30,7 +31,8 @@ class App
       end
     end
   end
-#Create a Person
+
+  # Create a Person
   def create_a_person
     puts 'Do you want to create a teacher or a student'
     puts
@@ -48,8 +50,9 @@ class App
       create_a_person
     end
   end
-#Create a Student
-   def create_a_student
+
+  # Create a Student
+  def create_a_student
     puts 'Age'
     age = gets.chomp.to_i
 
@@ -70,8 +73,9 @@ class App
 
     action_prompt
   end
-#Create a Teacher
-    def create_a_teacher
+
+  # Create a Teacher
+  def create_a_teacher
     puts 'Age'
     age = gets.chomp.to_i
 
@@ -81,19 +85,15 @@ class App
     puts 'Name'
     name = gets.chomp
 
-    has_permission = permit?
-
-    new_teacher = Teacher.new(specialization, age, name: name, parent_permission: has_permission)
+    new_teacher = Teacher.new(specialization, age, name: name)
     @people << new_teacher unless @books.include?(new_teacher)
 
-    puts new_teacher
-
-    puts "Teacher #{name} with age #{age} and specialization #{specialization.upcase}, was created"
+    puts "Teacher #{name} with age #{age} and specialized in #{specialization}, was created"
 
     action_prompt
   end
 
-   def permit?
+  def permit?
     puts 'Have a parent permit ? [Y / N]'
 
     permit = gets.chomp.upcase
@@ -108,6 +108,7 @@ class App
       permit?
     end
   end
+
   # Creating books
   def display_all_books
     if @books.empty?
@@ -120,7 +121,8 @@ class App
       end
     end
   end
-    def create_a_book
+
+  def create_a_book
     puts 'Book Author'
     author = gets.chomp
 
@@ -133,7 +135,7 @@ class App
     action_prompt
   end
 
-   # Create Rentals
+  # Create Rentals
   def list_all_rentals
     puts 'Enter persons id'
 
@@ -153,7 +155,7 @@ class App
     end
   end
 
-   def create_a_rental
+  def create_a_rental
     puts 'Select a book by an index'
     display_all_books
     run if @books.empty?
@@ -173,6 +175,4 @@ class App
     puts 'Rentals created successfully !'
     run
   end
-
 end
-
