@@ -133,5 +133,25 @@ class App
     action_prompt
   end
 
+   # Create Rentals
+  def list_all_rentals
+    puts 'Enter persons id'
+
+    person_id = gets.chomp.to_i
+
+    if !@people.find { |person| person.id == person_id }
+      puts 'No rentals found'
+    elsif @rentals.empty?
+      puts 'Empty Rental list'
+    else
+      puts "Rentals count(#{@people.count})"
+      @rentals.select do |rental|
+        if rental.person.id == person_id
+          puts "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}"
+        end
+      end
+    end
+  end
+
 end
 
