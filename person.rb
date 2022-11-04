@@ -34,4 +34,4 @@ class Person < Nameable
 end
 
 person = Person.new(22, 'maximilianus')
-person.correct_name
+puts person.name

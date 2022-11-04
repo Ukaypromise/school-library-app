@@ -1,9 +1,13 @@
 require_relative './app'
 
 def options
-  puts 'Welcome to School Library App!'
-  puts
-  puts 'Please choose an option by entrying a number:'
+  puts "---------------------------------\n
+  Welcome to School Library App!\n
+  \n
+  ------------------------------"
+  puts "---------------------------------\n
+   puts 'Please choose an option by entrying a number:'!\n
+   ------------------------------"
 
   select_option = [
     '1 - List all books',
@@ -22,9 +26,9 @@ end
 def choose_action(selected_option)
   case selected_option
   when 1
-    display_all_people
-  when 2
     display_all_books
+  when 2
+    display_all_people
   when 3
     create_a_person
   when 4

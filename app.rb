@@ -87,6 +87,7 @@ class App
 
     new_teacher = Teacher.new(specialization, age, name: name)
     @people << new_teacher unless @books.include?(new_teacher)
+    puts new_teacher
 
     puts "Teacher #{name} with age #{age} and specialized in #{specialization}, was created"
 
@@ -112,12 +113,12 @@ class App
   # Creating books
   def display_all_books
     if @books.empty?
-      puts 'Empty book list'
+      puts 'No books available. Please add books'
       run
     else
       puts "book lists count (#{@books.count})"
       @books.each_with_index do |book, index|
-        puts "#{index + 1} book title is: #{book.title} written by: #{book.author}"
+        puts "#{index + 1} book in archive. Title is: #{book.title} written by: #{book.author}"
       end
     end
   end
