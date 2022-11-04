@@ -108,6 +108,18 @@ class App
       permit?
     end
   end
+  # Creating books
+  def display_all_books
+    if @books.empty?
+      puts 'Empty book list'
+      run
+    else
+      puts "book lists count (#{@books.count})"
+      @books.each_with_index do |book, index|
+        puts "#{index + 1} book title is: #{book.title} written by: #{book.author}"
+      end
+    end
+  end
 
 
 end
