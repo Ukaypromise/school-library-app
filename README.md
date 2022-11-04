@@ -16,11 +16,27 @@
 
 To start with this project. First clone this project. 
 
-### Prerequisites
+## Pre-requisites
 
-You just need a good computer and a code editor. 
+- To be able to work with this projext, you need to have Ruby installed on your local machine
+- Ruby bundler properly set up for installing dependencies. Use the following links to install Ruby on your machine.
 
-## Authors
+  - **For windows** : [Windows Installer](https://rubyinstaller.org/)
+
+  - **For Linux** : [Linux Installer](https://www.ruby-lang.org/en/documentation/installation/)
+
+  - **For MacOS** : [MacOS Installer](https://www.ruby-lang.org/en/documentation/installation/)
+
+## Setup
+
+- Git clone `https://github.com/Ukaypromise/school-library-app.git`
+- cd into the cloned repo
+- cd `school_library`
+- Run `bundle install` to install the required dependencies
+- Run `ruby main.rb` to start the app
+- run `rubocop .` to check for linters
+
+## Author
 
 👤 ** Promise Uka **
 
@@ -45,5 +61,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
