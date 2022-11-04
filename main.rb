@@ -6,7 +6,6 @@ def options
  'Please choose an option by entrying a number!:'
   ------------------------------"
 
-
   select_option = [
     '1 - List all books',
     '2 - List all people',
