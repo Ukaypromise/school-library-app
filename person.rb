@@ -23,7 +23,7 @@ class Person < Nameable
   end
 
   def can_use_services?
-    is_of_age? || @parent_permission
+    of_age? || @parent_permission
   end
 
   private
@@ -34,4 +34,4 @@ class Person < Nameable
 end
 
 person = Person.new(22, 'maximilianus')
-puts person.name
+puts person.can_use_services?
