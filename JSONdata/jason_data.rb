@@ -94,7 +94,11 @@ module HandleFile
 
   # Read rentals from stored rentals file
   def read_rentals
+    parse_file = read_json('JSONdata/rentals.json')
+    parse_file.map do |rental|
+      book1 = @books.find { |book| book.title == rental['book_title'] }
+      person1 = @people.find { |person| person.id == rental['person_id'] }
+      @rentals.push(Rental.new(date, book1, person1))
+    end
   end
-
-
 end

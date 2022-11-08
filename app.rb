@@ -4,6 +4,7 @@ require_relative './classroom'
 require_relative './book'
 require_relative './rentals'
 require_relative './module/display'
+require_relative './module/JSONdata/jason_data'
 
 class App
   attr_accessor :book, :people, :rentals
@@ -12,9 +13,13 @@ class App
     @books = []
     @people = []
     @rentals = []
+    read_books
+    read_people
+    read_rentals
   end
 
   include Display
+  include HandleFile
 
   # Create a Person
   def create_a_person
@@ -33,7 +38,8 @@ class App
       puts 'Select a valid option between 1 and 2'
       create_a_person
     end
-    
+    store_people
+
   end
 
   # Create a Student
@@ -103,6 +109,7 @@ class App
     new_book = Book.new(title, author)
     @books.push(new_book)
     puts "Book #{title} written by #{author} was created"
+    store_books
   end
 
   # Create Rentals
@@ -125,5 +132,6 @@ class App
     @rentals << new_rental unless @rentals.include?(new_rental)
 
     puts 'Rentals created successfully !'
+    store_rentals
   end
 end
