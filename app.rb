@@ -3,6 +3,7 @@ require_relative './teacher'
 require_relative './classroom'
 require_relative './book'
 require_relative './rentals'
+require_relative './module/display'
 
 class App
   attr_accessor :book, :people, :rentals
@@ -13,30 +14,12 @@ class App
     @rentals = []
   end
 
-  def run
-    action_prompt
-  end
-
-  # Display All People
-  def display_all_people
-    if @people.empty?
-      puts 'List empty'
-      puts 'Create a person'
-      run
-    else
-      puts "people list (#{@people.count})"
-
-      @people.each_with_index do |person, index|
-        puts "#{index + 1} type: #{person.type}  person name: #{person.name}, person id: #{person.id}"
-      end
-    end
-    # action_prompt
-  end
+  include Display
 
   # Create a Person
   def create_a_person
     puts 'Do you want to create a teacher or a student'
-    puts
+    puts 'Please choose an option by entering a number:'
     puts 'Select 1 to create a Student'
     puts 'Select 2 to create a Teacher'
 
@@ -71,8 +54,6 @@ class App
     puts new_student
 
     puts "Student #{name} with age #{age} and classroom #{classroom.upcase}, was created"
-
-    action_prompt
   end
 
   # Create a Teacher
@@ -91,8 +72,6 @@ class App
     puts new_teacher
 
     puts "Teacher #{name} with age #{age} and specialized in #{specialization}, was created"
-
-    action_prompt
   end
 
   def permit?
@@ -111,19 +90,7 @@ class App
     end
   end
 
-  # Creating books
-  def display_all_books
-    if @books.empty?
-      puts 'No books available. Please add books'
-      run
-    else
-      puts "book lists count (#{@books.count})"
-      @books.each_with_index do |book, index|
-        puts "#{index + 1} book in archive. Title is: #{book.title} written by: #{book.author}"
-      end
-    end
-    # action_prompt
-  end
+  # Create books
 
   def create_a_book
     puts 'Book Author'
@@ -135,28 +102,9 @@ class App
     new_book = Book.new(title, author)
     @books.push(new_book)
     puts "Book #{title} written by #{author} was created"
-    action_prompt
   end
 
   # Create Rentals
-  def list_all_rentals
-    puts 'Enter persons id'
-
-    person_id = gets.chomp.to_i
-
-    if !@people.find { |person| person.id == person_id }
-      puts 'No rentals found'
-    elsif @rentals.empty?
-      puts 'Empty Rental list'
-    else
-      puts "Rentals count(#{@people.count})"
-      @rentals.select do |rental|
-        if rental.person.id == person_id
-          puts "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}"
-        end
-      end
-    end
-  end
 
   def create_a_rental
     puts 'Select a book by an index'
@@ -176,6 +124,5 @@ class App
     @rentals << new_rental unless @rentals.include?(new_rental)
 
     puts 'Rentals created successfully !'
-    run
   end
 end
