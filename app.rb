@@ -13,16 +13,13 @@ class App
     @rentals = []
   end
 
-  def run
-    action_prompt
-  end
-
+  
   # Display All People
   def display_all_people
     if @people.empty?
       puts 'List empty'
       puts 'Create a person'
-      run
+      
     else
       puts "people list (#{@people.count})"
 
@@ -30,7 +27,7 @@ class App
         puts "#{index + 1} Person type: #{person.type}  person name: #{person.name}, person id: #{person.id}"
       end
     end
-    # action_prompt
+   
   end
 
   # Create a Person
@@ -72,7 +69,7 @@ class App
 
     puts "Student #{name} with age #{age} and classroom #{classroom.upcase}, was created"
 
-    action_prompt
+    
   end
 
   # Create a Teacher
@@ -92,7 +89,7 @@ class App
 
     puts "Teacher #{name} with age #{age} and specialized in #{specialization}, was created"
 
-    action_prompt
+    
   end
 
   def permit?
@@ -115,14 +112,14 @@ class App
   def display_all_books
     if @books.empty?
       puts 'No books available. Please add books'
-      run
+      
     else
       puts "book lists count (#{@books.count})"
       @books.each_with_index do |book, index|
         puts "#{index + 1} book in archive. Title is: #{book.title} written by: #{book.author}"
       end
     end
-    # action_prompt
+    
   end
 
   def create_a_book
@@ -135,7 +132,7 @@ class App
     new_book = Book.new(title, author)
     @books.push(new_book)
     puts "Book #{title} written by #{author} was created"
-    action_prompt
+   
   end
 
   # Create Rentals
@@ -176,6 +173,6 @@ class App
     @rentals << new_rental unless @rentals.include?(new_rental)
 
     puts 'Rentals created successfully !'
-    run
+    
   end
 end
