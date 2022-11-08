@@ -21,4 +21,12 @@ module HandleFile
   end
 
   # Store Books in Json file
+  def store_books
+    array = []
+    @books.each do |book|
+      array.push({
+        title: book.title,
+        author: book.author})
+    end
+    write_json(array, 'JSONdata/books.json')
 end
