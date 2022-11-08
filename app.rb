@@ -33,6 +33,7 @@ class App
       puts 'Select a valid option between 1 and 2'
       create_a_person
     end
+    
   end
 
   # Create a Student

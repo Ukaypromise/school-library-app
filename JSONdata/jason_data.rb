@@ -12,4 +12,13 @@ module HandleFile
     }
     File.write(file_path, JSON.generate(array, opts))
   end
+  # Read from file and checks if file exists
+  def read_json(file_path)
+    return unless File.exist?(file_path)
+
+    file = File.read(file_path)
+    JSON.parse(file)
+  end
+
+  # Store Books in Json file
 end
