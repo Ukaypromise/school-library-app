@@ -1,6 +1,6 @@
 class Book
   attr_accessor :title, :author, :rentals
-git
+
   def initialize(title, author)
     @title = title
     @author = author

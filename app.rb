@@ -4,7 +4,7 @@ require_relative './classroom'
 require_relative './book'
 require_relative './rentals'
 require_relative './module/display'
-require_relative './module/JSONdata/jason_data'
+require_relative './JSONdata/json_data'
 
 class App
   attr_accessor :book, :people, :rentals
