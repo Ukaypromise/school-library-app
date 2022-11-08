@@ -14,12 +14,12 @@ class App
     @rentals = []
   end
 
-include Display
-  
+  include Display
+
   # Create a Person
   def create_a_person
     puts 'Do you want to create a teacher or a student'
-    puts
+    puts 'Please choose an option by entering a number:'
     puts 'Select 1 to create a Student'
     puts 'Select 2 to create a Teacher'
 
@@ -54,8 +54,6 @@ include Display
     puts new_student
 
     puts "Student #{name} with age #{age} and classroom #{classroom.upcase}, was created"
-
-    
   end
 
   # Create a Teacher
@@ -74,8 +72,6 @@ include Display
     puts new_teacher
 
     puts "Teacher #{name} with age #{age} and specialized in #{specialization}, was created"
-
-    
   end
 
   def permit?
@@ -94,7 +90,7 @@ include Display
     end
   end
 
-   # Create books
+  # Create books
 
   def create_a_book
     puts 'Book Author'
@@ -106,11 +102,9 @@ include Display
     new_book = Book.new(title, author)
     @books.push(new_book)
     puts "Book #{title} written by #{author} was created"
-   
   end
 
   # Create Rentals
-  
 
   def create_a_rental
     puts 'Select a book by an index'
@@ -130,6 +124,5 @@ include Display
     @rentals << new_rental unless @rentals.include?(new_rental)
 
     puts 'Rentals created successfully !'
-    
   end
 end

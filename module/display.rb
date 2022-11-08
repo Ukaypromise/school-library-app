@@ -1,25 +1,23 @@
 module Display
-
-    # Display books
+  # Display books
   def display_all_books
     if @books.empty?
       puts 'No books available. Please add books'
-      
+
     else
       puts "book lists count (#{@books.count})"
       @books.each_with_index do |book, index|
         puts "#{index + 1} book in archive. Title is: #{book.title} written by: #{book.author}"
       end
     end
-    
   end
 
-    # Display All People
+  # Display All People
   def display_all_people
     if @people.empty?
       puts 'List empty'
       puts 'Create a person'
-      
+
     else
       puts "people list (#{@people.count})"
 
@@ -27,9 +25,9 @@ module Display
         puts "#{index + 1} Person type: #{person.type}  person name: #{person.name}, person id: #{person.id}"
       end
     end
-   
   end
-# List Rentals
+
+  # List Rentals
   def list_all_rentals
     puts 'Enter persons id'
 
@@ -48,5 +46,4 @@ module Display
       end
     end
   end
-
 end
