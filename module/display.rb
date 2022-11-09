@@ -3,7 +3,6 @@ module Display
   def display_all_books
     if @books.empty?
       puts 'No books available. Please add books'
-
     else
       puts "book lists count (#{@books.count})"
       @books.each_with_index do |book, index|
@@ -31,9 +30,7 @@ module Display
   # List Rentals
   def list_all_rentals
     puts 'Enter persons id'
-
     person_id = gets.chomp.to_i
-
     if !@people.find { |person| person['id'] == person_id }
       puts 'No rentals found'
     elsif @rentals.empty?

@@ -8,12 +8,7 @@ class Book
   end
 
   def add_rental(rental)
-    @rentals << rental
-  end
-
-  def self.all
-    books = []
-    ObjectSpace.each_object(Book) { |book| books << book }
-    books
+    @rentals.push(rental)
+    rental.book = self
   end
 end

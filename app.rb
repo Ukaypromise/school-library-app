@@ -50,7 +50,6 @@ class App
 
     puts 'Name'
     name = gets.chomp
-
     has_permission = permit?
 
     new_student = Student.new(classroom, age, name: name, parent_permission: has_permission)
@@ -92,7 +91,6 @@ class App
 
   def permit?
     puts 'Have a parent permit ? [Y / N]'
-
     permit = gets.chomp.upcase
 
     case permit
@@ -141,15 +139,12 @@ class App
     date = gets.chomp
 
     new_rental = Rental.new(date, @people[person_index], @books[book_index])
-    # @rentals << new_rental unless @rentals.include?(new_rental)
      @rentals << {
       date: new_rental.date,
       index: new_rental.person['id'],
       books: new_rental.book['id']
     }
-
     write_rental(@rentals)
-
     puts 'Rentals created successfully !'
   end
 end

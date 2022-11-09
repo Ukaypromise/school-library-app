@@ -5,5 +5,11 @@
     "age": "45",
     "classroom": "A",
     "id": 2
+  },
+  {
+    "name": "Promisehh",
+    "type": "Teacher",
+    "age": "Maths",
+    "id": 69
   }
 ]
