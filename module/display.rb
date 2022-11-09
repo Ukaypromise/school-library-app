@@ -42,7 +42,7 @@ module Display
       puts "Rentals count(#{@people.count})"
       @rentals.each do |rental|
         if rental['index'] == person_id
-          puts "Date: #{rental.['date']}, Book: '#{rental['title']}' by #{rental['author']}"
+          puts "Date: #{rental['date']}, Book: '#{rental['title']}' by #{rental['author']}"
         end
       end
     end
