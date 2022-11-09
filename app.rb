@@ -139,7 +139,7 @@ class App
     date = gets.chomp
 
     new_rental = Rental.new(date, @people[person_index], @books[book_index])
-     @rentals << {
+    @rentals << {
       date: new_rental.date,
       index: new_rental.person['id'],
       books: new_rental.book['id']

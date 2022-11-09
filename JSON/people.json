@@ -11,5 +11,26 @@
     "type": "Teacher",
     "age": "Maths",
     "id": 69
+  },
+  {
+    "name": "Pld",
+    "type": "Student",
+    "age": "A",
+    "classroom": 23,
+    "id": 166
+  },
+  {
+    "name": "SEDE",
+    "type": "Student",
+    "age": "A",
+    "classroom": 14,
+    "id": 156
+  },
+  {
+    "name": "Pot",
+    "type": "Student",
+    "age": "A",
+    "classroom": 34,
+    "id": 125
   }
 ]
