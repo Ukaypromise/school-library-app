@@ -1,0 +1,16 @@
+[
+  {
+    "name": "rsfd",
+    "type": "Student",
+    "age": "a",
+    "classroom": 43,
+    "id": 25
+  },
+    {
+        "name": "rsfd",
+        "type": "Student",
+        "age": "a",
+        "classroom": 43,
+        "id": 25
+    }  
+]
