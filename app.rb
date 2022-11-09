@@ -1,3 +1,6 @@
+require 'json'
+require './database'
+require './database_read'
 require_relative './student'
 require_relative './teacher'
 require_relative './classroom'
@@ -9,11 +12,13 @@ class App
   attr_accessor :book, :people, :rentals
 
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = read_book
+    @people = read_person
+    @rentals = read_rentals
   end
 
+  include Database
+  include ReadDatabase
   include Display
 
   # Create a Person
@@ -49,9 +54,15 @@ class App
     has_permission = permit?
 
     new_student = Student.new(classroom, age, name: name, parent_permission: has_permission)
-    @people << new_student unless @books.include?(new_student)
+    @people << {
+      name: new_student.name,
+      type: new_student.type,
+      age: new_student.age,
+      classroom: new_student.classroom,
+      id: new_student.id
+    }
 
-    puts new_student
+    write_person(@people)
 
     puts "Student #{name} with age #{age} and classroom #{classroom.upcase}, was created"
   end
@@ -68,8 +79,13 @@ class App
     name = gets.chomp
 
     new_teacher = Teacher.new(specialization, age, name: name)
-    @people << new_teacher unless @books.include?(new_teacher)
-    puts new_teacher
+    @people << {
+      name: new_teacher.name,
+      type: new_teacher.type,
+      age: new_teacher.age,
+      id: new_teacher.id
+    }
+    write_person(@people)
 
     puts "Teacher #{name} with age #{age} and specialized in #{specialization}, was created"
   end
@@ -100,7 +116,11 @@ class App
     title = gets.chomp
 
     new_book = Book.new(title, author)
-    @books.push(new_book)
+    @books << {
+      title: new_book.title,
+      author: new_book.author
+    }
+    write_book(@books)
     puts "Book #{title} written by #{author} was created"
   end
 
@@ -121,7 +141,14 @@ class App
     date = gets.chomp
 
     new_rental = Rental.new(date, @people[person_index], @books[book_index])
-    @rentals << new_rental unless @rentals.include?(new_rental)
+    # @rentals << new_rental unless @rentals.include?(new_rental)
+     @rentals << {
+      date: new_rental.date,
+      index: new_rental.person['id'],
+      books: new_rental.book['id']
+    }
+
+    write_rental(@rentals)
 
     puts 'Rentals created successfully !'
   end
