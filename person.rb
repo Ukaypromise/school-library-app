@@ -32,6 +32,3 @@ class Person < Nameable
     @age >= 18
   end
 end
-
-person = Person.new(22, 'maximilianus')
-puts person.can_use_services?

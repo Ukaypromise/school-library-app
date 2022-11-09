@@ -7,7 +7,7 @@ module Display
     else
       puts "book lists count (#{@books.count})"
       @books.each_with_index do |book, index|
-        puts "#{index + 1} book in archive. Title is: #{book.title} written by: #{book.author}"
+        puts "#{index + 1} book in archive. Title is: #{book['title']} written by: #{book['author']}"
       end
     end
   end
@@ -22,8 +22,9 @@ module Display
       puts "people list (#{@people.count})"
 
       @people.each_with_index do |person, index|
-        puts "#{index + 1} Person type: #{person.type}  person name: #{person.name}, person id: #{person.id}"
+        puts "#{index + 1} Person type: #{person['type']}  person name: #{person['name']}, person id: #{person['id']}"
       end
+      puts ''
     end
   end
 
@@ -33,15 +34,15 @@ module Display
 
     person_id = gets.chomp.to_i
 
-    if !@people.find { |person| person.id == person_id }
+    if !@people.find { |person| person['id'] == person_id }
       puts 'No rentals found'
     elsif @rentals.empty?
       puts 'Empty Rental list'
     else
       puts "Rentals count(#{@people.count})"
-      @rentals.select do |rental|
-        if rental.person.id == person_id
-          puts "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}"
+      @rentals.each do |rental|
+        if rental['index'] == person_id
+          puts "Date: #{rental.['date']}, Book: '#{rental['title']}' by #{rental['author']}"
         end
       end
     end
