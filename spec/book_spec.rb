@@ -10,4 +10,10 @@ describe '#Check the Book Class' do
   it 'returns the correct author' do
     expect(book.author).to eql 'Promise'
   end
+
+  describe '#add_rentals method' do
+    it 'has rentals' do
+      expect(book.rentals).to eql []
+    end
+  end
 end

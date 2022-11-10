@@ -18,4 +18,10 @@ describe '#Review Person Class' do
   it 'Return result for correct_name' do
     expect(person.correct_name).to eql 'Addis'
   end
+
+  describe '#add_rentals method' do
+    it 'has rentals' do
+      expect(person.rentals).to eql []
+    end
+  end
 end
