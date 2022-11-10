@@ -1,5 +1,3 @@
-
-
 require './person'
 require './book'
 require './rentals'
