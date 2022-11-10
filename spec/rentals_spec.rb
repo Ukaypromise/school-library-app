@@ -24,6 +24,4 @@ describe 'Test rental class implementation' do
   it 'return the correct rental' do
     expect(@rentals).to be_an_instance_of(Rental)
   end
-
-  
 end

@@ -20,7 +20,7 @@ describe '#Review Person Class' do
   end
 
   describe '#add_rentals method' do
-    it 'has rentals' do
+    it 'add_rental' do
       expect(person.rentals).to eql []
     end
   end

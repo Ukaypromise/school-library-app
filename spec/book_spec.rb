@@ -12,7 +12,7 @@ describe '#Check the Book Class' do
   end
 
   describe '#add_rentals method' do
-    it 'has rentals' do
+    it 'add_rentals' do
       expect(book.rentals).to eql []
     end
   end
