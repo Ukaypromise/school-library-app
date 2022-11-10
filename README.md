@@ -36,9 +36,15 @@ To start with this project. First clone this project.
 - Run `ruby main.rb` to start the app
 - run `rubocop .` to check for linters
 
-## Author
+## Authors
 
-👤 ** Promise Uka **
+### 👤 Addis Tsega
+
+- GitHub: [@Aseadd](https://github.com/Aseadd)
+- Twitter: [@AdaTsega](https://twitter.com/AdaTsega)
+- LinkedIn: [Addis Tsega](https://www.linkedin.com/in/addis-tsega/)
+
+## 👤  Promise Uka 
 
 - GitHub: [@Ukaypromise](https://github.com/Ukaypromise)
 - Twitter: [@PromiseUkay](https://twitter.com/PromiseUkay)
