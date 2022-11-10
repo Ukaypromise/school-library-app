@@ -1,8 +1,8 @@
 
 
-require '../person'
-require '../book'
-require '../rentals'
+require './person'
+require './book'
+require './rentals'
 
 describe 'Test rental class implementation' do
   before(:each) do

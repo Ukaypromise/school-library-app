@@ -1,4 +1,4 @@
-require_relative '../person'
+require './person'
 
 person = Person.new(30, 'Addis')
 
