@@ -12,4 +12,18 @@ describe 'Test rental class implementation' do
   it 'date of rental implementation' do
     expect(@rentals.date).to eql '22/01/2020'
   end
+
+  it 'person of rental implementation' do
+    expect(@rentals.person).to eql @person
+  end
+
+  it 'book of rental implementation' do
+    expect(@rentals.book).to eql @book
+  end
+
+  it 'return the correct rental' do
+    expect(@rentals).to be_an_instance_of(Rental)
+  end
+
+  
 end
